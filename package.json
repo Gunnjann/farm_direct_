@@ -1,0 +1,14 @@
+{
+  "name": "farmdirect",
+  "private": true,
+  "description": "Convenience scripts to install and run the FarmDirect API and client together",
+  "scripts": {
+    "postinstall": "npm install --prefix farmdirect-api && npm install --prefix farmdirect-client",
+    "seed": "npm run seed --prefix farmdirect-api",
+    "test": "npm test --prefix farmdirect-api",
+    "dev": "concurrently -n api,web -c yellow,green \"npm run dev --prefix farmdirect-api\" \"npm run dev --prefix farmdirect-client\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
